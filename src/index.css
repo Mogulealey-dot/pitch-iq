@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ── Design tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --bg-base:      #050b18;
+  --bg-surface:   #0d1526;
+  --bg-elevated:  #152036;
+  --bg-border:    #1c2d45;
+  --border:       #1f3550;
+  --border-hover: #2a4a6b;
+
+  --text-primary:   #e8edf5;
+  --text-secondary: #7a9bbf;
+  --text-muted:     #3d5a7a;
+
+  --accent:       #00e5a0;
+  --accent-dim:   rgba(0, 229, 160, 0.12);
+  --accent-glow:  rgba(0, 229, 160, 0.25);
+  --indigo:       #6366f1;
+  --indigo-glow:  rgba(99, 102, 241, 0.25);
+  --red:          #ef4444;
+  --yellow:       #f59e0b;
+  --green:        #22c55e;
+
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  14px;
+  --radius-xl:  20px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.6);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.7);
+}
+
+/* ── Reset & base ───────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, 'Segoe UI', sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+}
+
+#root { min-height: 100vh; }
+
+/* ── Focus ring ─────────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Select options ─────────────────────────────────────────────────────────── */
+select option {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-hover); }
+
+/* ── Recharts tooltip global tweak ─────────────────────────────────────────── */
+.recharts-tooltip-wrapper { filter: drop-shadow(0 4px 12px rgba(0,0,0,0.7)); }

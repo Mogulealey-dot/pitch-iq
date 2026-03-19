@@ -1,0 +1,286 @@
+.page {
+  max-width: 1000px;
+}
+
+.loading, .empty {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────────── */
+.header {
+  margin-bottom: 1.75rem;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.sub {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* ── Stats row ──────────────────────────────────────────────────────────────── */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.statCard {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.25rem;
+}
+
+.statLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.statValue {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+.statValue.green { color: var(--green); }
+.statValue.red { color: var(--red); }
+.statValue.yellow { color: var(--yellow); }
+.statValue.accent { color: var(--accent); }
+
+.statSub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* ── Monthly chart card ─────────────────────────────────────────────────────── */
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.cardSub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+/* ── Filter tabs ────────────────────────────────────────────────────────────── */
+.filterTabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.filterTab {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filterTab:hover { border-color: var(--border-hover); color: var(--text-primary); }
+.filterActive {
+  background: var(--accent-dim);
+  border-color: rgba(0,229,160,0.3);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.filterCount {
+  background: rgba(255,255,255,0.08);
+  border-radius: 99px;
+  padding: 0.05rem 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* ── List ───────────────────────────────────────────────────────────────────── */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  border-left-width: 3px;
+  transition: box-shadow 0.15s;
+  flex-wrap: wrap;
+}
+
+.row_correct { border-left-color: var(--green); }
+.row_wrong { border-left-color: var(--red); }
+.row_pending { border-left-color: var(--yellow); }
+
+.rowDate {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  width: 82px;
+  flex-shrink: 0;
+}
+
+.rowMatch {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.teamName {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.score {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--accent);
+  white-space: nowrap;
+  padding: 0.15rem 0.55rem;
+  background: var(--accent-dim);
+  border-radius: var(--radius-sm);
+}
+
+.rowPred {
+  display: flex;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.predItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.predLabel {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.predValue {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.rowComp {
+  flex-shrink: 0;
+}
+
+.compBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 99px;
+  border: 1px solid;
+  white-space: nowrap;
+  color: var(--text-primary);
+}
+
+.statusBadge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 99px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.statusBadge.correct {
+  background: rgba(34,197,94,0.12);
+  color: var(--green);
+  border: 1px solid rgba(34,197,94,0.25);
+}
+.statusBadge.wrong {
+  background: rgba(239,68,68,0.12);
+  color: var(--red);
+  border: 1px solid rgba(239,68,68,0.25);
+}
+.statusBadge.pending {
+  background: rgba(245,158,11,0.12);
+  color: var(--yellow);
+  border: 1px solid rgba(245,158,11,0.25);
+}
+
+/* ── Tooltip ────────────────────────────────────────────────────────────────── */
+.tooltip {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.9rem;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+}
+.tooltipLabel {
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  font-size: 0.78rem;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .statsRow { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .statsRow { grid-template-columns: repeat(2, 1fr); }
+  .row { flex-wrap: wrap; }
+  .rowPred { gap: 0.75rem; }
+}
+
+@media (max-width: 480px) {
+  .statsRow { grid-template-columns: 1fr 1fr; }
+}

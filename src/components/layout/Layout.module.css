@@ -1,0 +1,21 @@
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-base);
+  color: var(--text-primary);
+}
+
+.main {
+  flex: 1;
+  padding: 2rem 2.5rem;
+  overflow-y: auto;
+  min-width: 0;
+  /* Subtle dot-grid texture */
+  background-image: radial-gradient(circle, rgba(0,229,160,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+@media (max-width: 768px) {
+  .shell { flex-direction: column; }
+  .main { padding: 1.25rem 1rem; background-size: 20px 20px; }
+}

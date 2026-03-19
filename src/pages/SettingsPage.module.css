@@ -1,0 +1,311 @@
+.page {
+  max-width: 720px;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────────── */
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.sub {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* ── Section ────────────────────────────────────────────────────────────────── */
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+.sectionTitle.danger { color: var(--red); }
+
+/* ── Card ───────────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.dangerCard {
+  border-color: rgba(239,68,68,0.25);
+  background: rgba(239,68,68,0.04);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── Profile ────────────────────────────────────────────────────────────────── */
+.profileRow {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+.avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00e5a0, #6366f1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #050b18;
+  flex-shrink: 0;
+  box-shadow: 0 0 16px rgba(0,229,160,0.35);
+}
+
+.profileName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.profileEmail {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.2rem;
+}
+
+.profileSince {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* ── Data rows ──────────────────────────────────────────────────────────────── */
+.dataRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  flex-wrap: wrap;
+}
+
+.dataLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.dataSub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.exportBtn {
+  padding: 0.6rem 1.2rem;
+  background: var(--accent-dim);
+  border: 1px solid rgba(0,229,160,0.3);
+  border-radius: var(--radius-md);
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.exportBtn:hover { background: rgba(0,229,160,0.2); }
+.exportBtn:disabled { opacity: 0.5; cursor: default; }
+
+.countBadge {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.dangerBtn {
+  padding: 0.6rem 1.2rem;
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.3);
+  border-radius: var(--radius-md);
+  color: #f87171;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.dangerBtn:hover { background: rgba(239,68,68,0.18); }
+.dangerBtn:disabled { opacity: 0.4; cursor: default; }
+
+.signOutBtn {
+  padding: 0.6rem 1.2rem;
+  background: var(--bg-border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+.signOutBtn:hover { background: var(--bg-elevated); border-color: var(--border-hover); }
+
+/* ── App info ───────────────────────────────────────────────────────────────── */
+.appInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.appLogo {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 12px rgba(0,229,160,0.4));
+}
+
+.appName {
+  font-size: 1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00e5a0, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.2rem;
+}
+
+.appDesc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ── Overlay / Dialog ───────────────────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,11,24,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.dialog {
+  background: var(--bg-surface);
+  border: 1px solid rgba(239,68,68,0.3);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.dialogIcon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.dialog h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.dialog p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.dialogBtns {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.cancelBtn {
+  padding: 0.65rem 1.25rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.cancelBtn:hover { background: var(--bg-border); }
+.cancelBtn:disabled { opacity: 0.5; cursor: default; }
+
+.confirmDeleteBtn {
+  padding: 0.65rem 1.25rem;
+  background: var(--red);
+  border: none;
+  border-radius: var(--radius-md);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.confirmDeleteBtn:hover { opacity: 0.85; }
+.confirmDeleteBtn:disabled { opacity: 0.5; cursor: default; }
+
+/* ── Toast ──────────────────────────────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-elevated);
+  border: 1px solid rgba(34,197,94,0.4);
+  color: var(--green);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .dataRow { flex-direction: column; align-items: flex-start; }
+  .profileRow { flex-direction: column; text-align: center; }
+}
