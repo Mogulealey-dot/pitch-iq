@@ -59,7 +59,7 @@ function PredictionIcon({ match }) {
   return <span className={styles.predWrong} title="Wrong prediction">✗</span>
 }
 
-export default function MatchesPage({ matches, addMatch, updateMatch, removeMatch, loading }) {
+export default function MatchesPage({ matches, addMatch, updateMatch, removeMatch, loading, showToast }) {
   const [showForm, setShowForm] = useState(false)
   const [editId, setEditId] = useState(null)
   const [form, setForm] = useState(EMPTY_FORM)
@@ -154,8 +154,10 @@ export default function MatchesPage({ matches, addMatch, updateMatch, removeMatc
     }
     if (editId) {
       await updateMatch(editId, payload)
+      showToast?.('Match updated')
     } else {
       await addMatch(payload)
+      showToast?.('Match recorded ⚽')
     }
     setShowForm(false)
     setEditId(null)
@@ -165,6 +167,7 @@ export default function MatchesPage({ matches, addMatch, updateMatch, removeMatc
   const handleDelete = async (id) => {
     await removeMatch(id)
     setConfirmDelete(null)
+    showToast?.('Match deleted', 'error')
   }
 
   const filtered = useMemo(() => {

@@ -3,7 +3,7 @@ import AuthScreen from './components/auth/AuthScreen'
 import App from './App'
 
 export default function Root() {
-  const { user, error, signIn, signUp, signInWithGoogle, logOut } = useAuth()
+  const { user, error, signIn, signUp, signInWithGoogle, logOut, resetPassword } = useAuth()
 
   if (user === undefined) {
     return (
@@ -14,7 +14,7 @@ export default function Root() {
   }
 
   if (!user) {
-    return <AuthScreen onSignIn={signIn} onSignUp={signUp} onGoogle={signInWithGoogle} error={error} />
+    return <AuthScreen onSignIn={signIn} onSignUp={signUp} onGoogle={signInWithGoogle} onReset={resetPassword} error={error} />
   }
 
   return <App user={user} logOut={logOut} />

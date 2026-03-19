@@ -14,7 +14,7 @@ const EMPTY_FORM = {
   country: '',
 }
 
-export default function TeamsPage({ teams, matches, addTeam, updateTeam, removeTeam, loading }) {
+export default function TeamsPage({ teams, matches, addTeam, updateTeam, removeTeam, loading, showToast }) {
   const [showForm, setShowForm] = useState(false)
   const [editId, setEditId] = useState(null)
   const [form, setForm] = useState(EMPTY_FORM)
@@ -56,6 +56,7 @@ export default function TeamsPage({ teams, matches, addTeam, updateTeam, removeT
       await updateTeam(editId, payload)
     } else {
       await addTeam(payload)
+      showToast?.('Team added')
     }
     setShowForm(false)
     setEditId(null)
@@ -66,6 +67,7 @@ export default function TeamsPage({ teams, matches, addTeam, updateTeam, removeT
     await removeTeam(id)
     setConfirmDelete(null)
     if (selectedTeam?.id === id) setSelectedTeam(null)
+    showToast?.('Team removed', 'error')
   }
 
   // Compute team stats from matches

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { APP_NAME } from '../config/constants'
 import styles from './SettingsPage.module.css'
 
-export default function SettingsPage({ user, matches, settings, updateSettings, logOut, removeMatch }) {
+export default function SettingsPage({ user, matches, settings, updateSettings, logOut, removeMatch, showToast }) {
   const [confirmClear, setConfirmClear] = useState(false)
   const [clearing, setClearing] = useState(false)
   const [cleared, setCleared] = useState(false)
@@ -36,6 +36,7 @@ export default function SettingsPage({ user, matches, settings, updateSettings, 
     a.download = `pitchiq-export-${new Date().toISOString().slice(0, 10)}.json`
     a.click()
     URL.revokeObjectURL(url)
+    showToast?.('Data exported', 'info')
   }
 
   const handleClearAll = async () => {

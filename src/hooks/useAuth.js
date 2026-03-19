@@ -6,6 +6,7 @@ import {
   signOut,
   onAuthStateChanged,
   updateProfile,
+  sendPasswordResetEmail,
 } from 'firebase/auth'
 import { auth, googleProvider } from '../firebase'
 
@@ -48,5 +49,16 @@ export function useAuth() {
 
   const logOut = () => signOut(auth)
 
-  return { user, error, signIn, signUp, signInWithGoogle, logOut }
+  const resetPassword = async (email) => {
+    setError(null)
+    try {
+      await sendPasswordResetEmail(auth, email)
+      return true
+    } catch (e) {
+      setError(e.message)
+      return false
+    }
+  }
+
+  return { user, error, signIn, signUp, signInWithGoogle, logOut, resetPassword }
 }
